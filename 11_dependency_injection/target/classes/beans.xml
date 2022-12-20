@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dao" class="com.ultron.beans.EmployeeDao" />
+
+	<bean id="empService" class="com.ultron.beans.EmployeeService">
+	 <constructor-arg>
+	 <bean class="com.ultron.beans.EmployeeDao"></bean>
+	 </constructor-arg>
+		<property ref="dao" name="employeeDao"/>
+	</bean>
+
+</beans>

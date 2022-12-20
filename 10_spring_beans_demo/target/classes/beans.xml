@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="defaultConstructorBean" class="com.ultron.beans.Zoo" />
+	<bean id="constructorArgBean" class="com.ultron.beans.Zoo">
+		<constructor-arg value="100"></constructor-arg>
+	</bean>
+
+	<bean id="defaultStatic" class="com.ultron.beans.ZooStaticFactory"
+		factory-method="getZoo" />
+
+	<bean id="argStatic" class="com.ultron.beans.ZooStaticFactory"
+		factory-method="zooWithCount">
+		<constructor-arg value="100"></constructor-arg>
+	</bean>
+
+	<bean id="defaultInstance"
+		class="com.ultron.beans.ZooInstanceFactory">
+		<constructor-arg value="SMALL"></constructor-arg>
+	</bean>
+
+	<bean id="instanceDefault" factory-bean="defaultInstance"
+		factory-method="getZoo" />
+
+	<bean id="argInstance" factory-bean="defaultInstance"
+		factory-method="getZoo">
+		<constructor-arg value="50"></constructor-arg>
+	</bean>
+</beans>

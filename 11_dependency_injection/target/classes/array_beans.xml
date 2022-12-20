@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean id="conversionService"
+		class="com.ultron.holder.CustomConversionService">
+		<constructor-arg value="yyy-MM-dd"></constructor-arg>
+   </bean>	
+
+	<bean id="arrayHolder" class="com.ultron.holder.ArrayHolder">
+		<constructor-arg>
+			<array>
+				<value>Java SE</value>
+				<value>Java EE</value>
+				<value>Full Stack Spring</value>
+				<value>Angular</value>
+			</array>
+		</constructor-arg>
+	</bean>
+
+	<bean id="setHolder" class="com.ultron.holder.SetHolder">
+
+		<property name="number">
+			<set>
+				<value>10</value>
+				<value>22</value>
+				<value>11</value>
+				<value>14</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="listDay" class="com.ultron.holder.ListHolder">
+		<property name="open">
+			<list>
+				<value>MONDAY</value>
+				<value>SUNDAY</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="com.ultron.holder.MapHolder">
+		<property name="date">
+			<map>
+				<entry key="startDate" value="2020-04-03"></entry>
+				<entry key="endDate" value="2020-04-05"></entry>
+			</map>
+		</property>
+	</bean>
+		
+	
+
+</beans>

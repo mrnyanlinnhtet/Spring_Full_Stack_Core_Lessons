@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="mysql" class="com.mysql.cj.jdbc.MysqlDataSource">
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/jdc_test"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="admin"></property>
+	</bean>
+
+
+	<bean name="insert" class="com.jdc.dao.InsertCourse">
+		<constructor-arg ref="mysql"></constructor-arg>
+	</bean>
+
+</beans>

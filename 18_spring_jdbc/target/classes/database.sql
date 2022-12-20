@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS members;
+
+CREATE TABLE members(
+memberId VARCHAR(100) PRIMARY KEY,
+password VARCHAR(50) NOT NULL,
+name VARCHAR(20) NOT NULL,
+phone VARCHAR(20),
+email VARCHAR(50)
+);
